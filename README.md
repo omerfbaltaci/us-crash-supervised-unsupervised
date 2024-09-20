@@ -50,6 +50,11 @@ Verideki gizli desenleri keşfetmek için gözetimsiz kümelenme teknikleri uygu
 
 ## Sonuçlar
 - **Gözetimli Öğrenme**: Decision Tree (Karar Ağacı), kaza şiddetini tahmin etmede en iyi performansı göstermiştir ve yaklaşık %60 doğruluk elde edilmiştir. Modelin performansı karışıklık matrisi ve sınıflandırma raporu ile değerlendirilmiştir.
+
+- EDIT;
+Model içerisindeki kNN algoritmasını bütün satırlarla (nrows kullanmadan) ve n_neighbors=2, test_size=0.4 olarak çalıştırdığımda aşağıda görünen sonucu aldım. Proje yükleme gününde bu işlem çok uzun sürdüğünden yetiştirememiştim, sonradan tekrar modeli daha büyük bir hacimle test etmek istedim. Başarı oranı kayda değer miktarda arttı. Aşağıya görseli bırakıyorum.
+
+<img width="785" alt="image" src="https://github.com/user-attachments/assets/879c76d9-8f9b-4751-a63a-511a04cf556c">
   
 - **Gözetimsiz Öğrenme**: Veri setini gözetimsiz öğrenme algoritmalarıyla pek uyumlu çalıştırmayı başaramadım, kendi uyguladığım prosedürler sonucu alabildiğim en yüksek başarı oranı 0.04 ile MiniBatch algoritmasına ait.
 

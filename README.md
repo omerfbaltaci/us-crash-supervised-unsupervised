@@ -64,7 +64,7 @@ Model içerisindeki kNN algoritmasını bütün satırlarla (nrows kullanmadan) 
 
 ![image](https://github.com/user-attachments/assets/54e324b3-1520-4aac-b340-6163f2ba40c8)
 
-Bu da projenin size attığım halindeki sonuçlar;
+Bu da projenin ilk sonucu;
 
 ![image](https://github.com/user-attachments/assets/514d4c33-d9ce-4ffa-a816-b80e8810a9f7)
 
@@ -73,6 +73,6 @@ Aynı şekilde Decision Tree Algoritmasını da tekrardan üstte belirttiğim pa
 
 ![image](https://github.com/user-attachments/assets/58801e02-b2b4-4144-b42b-eef7f52a756b)
 
-Bu da projenin size attığım halindeki sonuçlar;
+Bu da projenin ilk sonucu;
 
 <img width="590" alt="image" src="https://github.com/user-attachments/assets/8f9557fd-fb26-4d27-b0de-ea87583c0aa3">

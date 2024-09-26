@@ -1,78 +1,45 @@
-# ABD Kaza Şiddeti Tahmini - Gözetimli ve Gözetimsiz Öğrenme
+# US Crash Analysis: Supervised and Unsupervised Learning
 
-Bu proje, ABD'deki trafik kazalarının şiddetini hem gözetimli hem de gözetimsiz makine öğrenme tekniklerini kullanarak tahmin etmeyi amaçlamaktadır. Kullanılan veri seti, kazalarla ilgili çeşitli özellikler içermekte olup, her bir kazanın şiddetini (1'den 4'e kadar) sınıflandırmak hedeflenmiştir.
+## Project Overview
+This project involves the analysis of a dataset containing information about US crashes. The analysis includes both supervised and unsupervised learning techniques to understand patterns and make predictions based on the data.
 
-## İçindekiler
-- [Genel Bakış](#genel-bakış)
-- [Veri Seti](#veri-seti)
-- [Proje Yapısı](#proje-yapısı)
-- [Yöntem](#yöntem)
-- [Sonuçlar](#sonuçlar)
-- [Proje Nasıl Çalıştırılır?](#proje-nasıl-çalıştırılır)
+## Dataset
+The dataset used in this project is sourced from Kaggle and contains detailed information about various crashes in the US. The key features of the dataset include:
 
+- **Date and Time**: When the crash occurred
+- **Location**: Geographic information of the crash
+- **Severity**: The severity of the crash
+- **Weather Conditions**: Weather conditions at the time of the crash
+- **Road Conditions**: Conditions of the road where the crash occurred
 
-## Genel Bakış
-ABD'deki trafik kazalarının şiddetini anlamak, yol güvenliğini artırmada kritik öneme sahiptir. Bu proje, kaza verilerine dayalı olarak kaza şiddetini tahmin etmek için makine öğrenimi tekniklerini uygular. Çalışmada iki ana yaklaşım kullanılmaktadır:
-1. **Gözetimli Öğrenme**: Etiketli verilerle kaza şiddetini sınıflandırma.
-2. **Gözetimsiz Öğrenme**: Önceden tanımlanmamış etiketlerle benzer kazaları kümelere ayırma.
+## Installation
+To run this project, you'll need to have Python installed along with the necessary libraries. You can install the required libraries using the following command:
 
-## Veri Seti
-Projede kullanılan veri seti, [US Accidents Dataset](https://www.kaggle.com/sobhanmoosavi/us-accidents) olarak bilinen ABD kaza verilerinden oluşmaktadır. 
+```bash
+pip install -r requirements.txt
 
-### Ana Özellikler:
-- `Start_Lat`, `Start_Lng`: Kazanın gerçekleştiği enlem ve boylam bilgisi. (Projeye dahil değil)
-- `Severity`: Kazanın şiddeti (1 ile 4 arasında değişen değerler).
-- `Distance(mi)`: Kazanın kapsadığı mesafe.
-- `Weather_Condition`: Kazanın olduğu sıradaki hava durumu. (Projeye dahil değil)
-- `Start_Time`, `End_Time`: Kazanın başlama ve bitiş zamanı.
+## Usage
+The project is organized as a Jupyter notebook. To explore the analysis, open the notebook using Jupyter:
 
-### Hedef Değişken:
-- `Severity`: Kazanın şiddetini belirten, 1 ila 4 arasında değişen kategorik bir değişken.
+```bash
+jupyter notebook us-crash-supervised-unsupervised.ipynb
+```
 
-## Proje Yapısı
-Proje aşağıdaki temel dosya ve klasörlerden oluşmaktadır:
-- **us-crash-supervised-unsupervised.ipynb**: Verilerin işlenmesi, keşifsel veri analizi (EDA), model oluşturma (hem gözetimli hem gözetimsiz) ve değerlendirme adımlarını içeren Jupyter not defteri.
-- **README.md**: Proje dokümantasyonu.
-- **data/**: (İsteğe bağlı) Veri setinin yer aldığı klasör.
+The notebook is structured as follows:
 
-## Yöntem
-### Gözetimli Öğrenme:
-Gözetimli yaklaşımda, kaza şiddetini tahmin etmek için çeşitli sınıflandırma algoritmaları uygulanmıştır. Kullanılan yöntemler şunlardır:
-- kNN (K-En Yakın Komşu) Algoritması
-- Decision Tree (Karar Ağacı) Algoritması
+1. **Introduction**: Overview of the project and dataset
+2. **Data Preprocessing**: Cleaning and preparing the data for analysis
+3. **Exploratory Data Analysis (EDA)**: Visualizing and understanding the data
+4. **Supervised Learning**: Building and evaluating predictive models
+5. **Unsupervised Learning**: Applying clustering techniques to discover patterns
+6. **Conclusion**: Summarizing findings and potential next steps
 
-### Gözetimsiz Öğrenme:
-Verideki gizli desenleri keşfetmek için gözetimsiz kümelenme teknikleri uygulanmıştır. Bu yöntemler, kaza şiddeti etiketleri olmadan benzer kazaların gruplandırılmasını sağlar.
-- **K-means**: K-ortalama kümeleme ya da K-means kümeleme yöntemi N adet veri nesnesinden oluşan bir veri kümesini giriş parametresi olarak verilen K adet kümeye bölümlemektir.
-- **MiniBatch KMeans**: Geleneksel k-means algoritmasının daha hızlı bir versiyonu.
+## Results
+The results section of the notebook presents the key findings from both the supervised and unsupervised learning analyses. This includes the performance metrics of the predictive models and the insights gained from clustering the data.
 
-## Sonuçlar
-- **Gözetimli Öğrenme**: Decision Tree (Karar Ağacı), kaza şiddetini tahmin etmede en iyi performansı göstermiştir ve yaklaşık %60 doğruluk elde edilmiştir. Modelin performansı karışıklık matrisi ve sınıflandırma raporu ile değerlendirilmiştir.
-  
-- **Gözetimsiz Öğrenme**: Veri setini gözetimsiz öğrenme algoritmalarıyla pek uyumlu çalıştırmayı başaramadım, kendi uyguladığım prosedürler sonucu alabildiğim en yüksek başarı oranı 0.04 ile MiniBatch algoritmasına ait.
-
-## Proje Nasıl Çalıştırılır?
-1. Bu repoyu klonlayın:
-   ```bash
-   git clone https://github.com/omerfbaltaci/us-crash-supervised-unsupervised
-   cd us-crash-supervised-unsupervised
-
-
-**EDIT**;
-
-Model içerisindeki kNN algoritmasını bütün satırlarla (nrows kullanmadan) ve n_neighbors=2, test_size=0.4 olarak çalıştırdığımda aşağıda görünen sonucu aldım. Proje yükleme gününde bu işlem çok uzun sürdüğünden yetiştirememiştim, sonradan tekrar modeli daha büyük bir hacimle test etmek istedim. Başarı oranı kayda değer miktarda arttı. Aşağıya görseli bırakıyorum.
-
-![image](https://github.com/user-attachments/assets/54e324b3-1520-4aac-b340-6163f2ba40c8)
-
-Bu da projenin ilk sonucu;
-
-![image](https://github.com/user-attachments/assets/514d4c33-d9ce-4ffa-a816-b80e8810a9f7)
-
-
-Aynı şekilde Decision Tree Algoritmasını da tekrardan üstte belirttiğim parametrelerle çalıştırdığımda %60'tan %78'e kadar olan bir artış söz konusu. Aşağıya görseli bırakıyorum.
-
-![image](https://github.com/user-attachments/assets/58801e02-b2b4-4144-b42b-eef7f52a756b)
-
-Bu da projenin ilk sonucu;
-
-<img width="590" alt="image" src="https://github.com/user-attachments/assets/8f9557fd-fb26-4d27-b0de-ea87583c0aa3">
+## Future Work
+Potential future work could include:
+- Enhancing the feature engineering process to improve model performance
+- Exploring additional machine learning algorithms
+- Conducting a more detailed analysis of specific crash types or conditions
+```

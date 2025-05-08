@@ -36,10 +36,3 @@ The notebook is structured as follows:
 
 ## Results
 The results section of the notebook presents the key findings from both the supervised and unsupervised learning analyses. This includes the performance metrics of the predictive models and the insights gained from clustering the data.
-
-## Future Work
-Potential future work could include:
-- Enhancing the feature engineering process to improve model performance
-- Exploring additional machine learning algorithms
-- Conducting a more detailed analysis of specific crash types or conditions
-```
